@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+@import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css');
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
+.wrap {
+    width: 1000px;
+    margin: auto;
+}
+
+.topHr {
+    border: 0;
+    height: 10px;
+}
+
+.menuBar {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    width: 2000px;
+    overflow: hidden;
+    direction: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.btn btn-primary {
+    font-weight: bold;
+}
+
+li {
+    float: left;
+    width: 100px;
+    margin-left: 50px;
+
+}
+
+a:link {
+    color: black;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 1px 10px 1px 10px;
+    text-decoration: none !important;
+    color: black;
+}
+
+a:hover {
+    animation: selected-hover 0.4s forwards;
+}
+
+h1 {
+    font-family: Roboto, Arial, 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', 'Apple SD Gothic Neo', 'AppleGothic', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    animation: bounce-top 1.7s forwards;
+}
+.comment > .titleInfo {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 30px;
+	font-weight: bold;
+}
+.comment >.info {
+	font-size: 15px; 
+}
+
+.titleDiv {
+    width: 300px;
+    margin: auto;
+    padding: 30px;
+    animation:  bounce-top 1.7s forwards;
+    
+
+
+}
+
+.photoDiv {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    background-image: url("http://app-storage-edge-006.cafe24.com/bannermanage2/tkddk3704/2019/10/22/298ac513e630983a3670d1ddcccb3492.jpg");
+    background-size: cover;
+}
+.productName{
+	margin-top: 30px;
+}
+.comment {
+    margin-top: 100px;
+    margin: auto;
+}
+
+.productInform {
+    margin: auto;
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    font-family: NanumSquare;
+}
+
+
+
+@keyframes selected-hover {
+    from {
+        color: black;
+    }
+
+    to {
+        color: #A4A4A4;
+    }
+}
+
+@keyframes bounce-top {
+    0% {
+        left: 50%;
+        transform: translateY(-45px);
+        animation-timing-function: ease-in;
+        opacity: 1
+    }
+
+    24% {
+        opacity: 1
+    }
+
+    40% {
+        transform: translateY(-24px);
+        animation-timing-function: ease-in
+    }
+
+    65% {
+        transform: translateY(-12px);
+        animation-timing-function: ease-in
+    }
+
+    82% {
+        transform: translateY(-6px);
+        animation-timing-function: ease-in
+    }
+
+    93% {
+        transform: translateY(-4px);
+        animation-timing-function: ease-in
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        transform: translateY(0);
+        animation-timing-function: ease-out
+    }
+
+    100% {
+        left: 50%;
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+        opacity: 1
+    }
+}
+
+@font-face {
+    font-family: 'NanumGothic';
+    src: url(NanumFont_TTF_ALL/NanumGothic.ttf) format('truetype');
+}
+.font-nanum-square {
+    font-family: 'NanumSquare', sans-serif;
+}
+
+.font-nanum-square-round {
+    font-family: 'NanumSquareRound', sans-serif;
+}
+
+
+
+/* 들여쓰기 ctrl+shift+h*/
