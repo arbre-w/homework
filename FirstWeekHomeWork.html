@@ -10,6 +10,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function writeInfo(){
+            let name = $('.ordername').val();
+            let count  = $('.orderCount').val();
+            let address = $('.orderAddress').val();
+            let number = $('orderPhone').val();
+        $.ajax({
+            type: "POST",
+            url: "file:///C:/Users/kkkwl/Desktop/sparta/homework/FirstWeekHomeWork.html?",
+            data: {Pname:name, Pcount : count, Paddress : address, Pnumber:number},
+            success: function(response){
+                alert("주문완료");
+            }
+        })
+        $.ajax({
+            type:"get",
+            url:"http://spartacodingclub.shop/order",
+            data={},
+            success: function(response){
+                let orders = response['orders'];
+                for(var i = 0;i<orders.length;i++){
+                    let make_html = '<tr>\
+                        <td>'+orders[i]['name']'</td>\
+                        <td>'+orders[i]['count']'</td>\
+                        <td>'+orders[i]['address']'</td>\
+                        <td>'+orders[i]['phone']'</td>\
+                        </tr>';
+                        $('.order').append(make_html);
+                }
+            }
+        })
+        }
+
+    </script>
     <link rel="stylesheet" type="text/css" href="Fhomework.css">
     <title>코코market</title>
 </head>
@@ -56,12 +90,12 @@
                 <form>
                     <div class="form-group">
                         <label for="formGroupExampleInput">주문자 성함 : </label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="성함">
+                        <input type="text" class="form-control ordername" id="formGroupExampleInput" placeholder="성함">
                     </div>
                     <div class="form-row align-items-center">
                         <div class="col-auto my-1">
                             <label class="mr-sm-2" for="inlineFormCustomSelect">수량 : </label>
-                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <select class="custom-select mr-sm-2 orderCount" id="inlineFormCustomSelect">
                                 <option selected>개수</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -71,14 +105,35 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">주소 : </label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="주소">
+                        <input type="text" class="form-control orderAddress" id="formGroupExampleInput2" placeholder="주소">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">전화번호 : </label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="전화번호">
+                        <input type="text" class="form-control orderPhone" id="formGroupExampleInput2" placeholder="전화번호">
                     </div>
-                    <button class="btn btn-primary" type="submit">주문하기</button>
+                    <button class="btn btn-primary orderButton" type="submit" onclick="writeInfo()">주문하기</button>
                 </form>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">수량</th>
+                            <th scope="col">주소</th>
+                            <th scope="col">전화번호</th>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="order">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
